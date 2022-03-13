@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_addresses
+    description: >
+      Table with address information
+
+  - name: stg_events
+    description: >
+      Table logging events on the website
+
+  - name: stg_order_items
+    description: >
+      Table with itemized list of products purchased and quantity in each order
+
+  - name: stg_orders
+    description: >
+      Table with order indormation
+
+  - name: stg_products
+    description: >
+      Table with name, price, and inventory of each item
+
+  - name: stg_promos
+    description: >
+      Table with all promotions and their associated discount
+
+  - name: stg_superheroes
+    description: >
+      Table with information of all superheroes
+
+  - name: stg_users
+    description: >
+      Table with user information

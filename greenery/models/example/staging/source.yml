@@ -1,0 +1,72 @@
+version: 2
+
+sources:
+
+  - name: postgres
+    schema: public
+    database: dbt
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables:
+      - name: addresses
+        description: >
+          Table with address information
+
+      - name: events
+        loaded_at_field: created_at
+        description: >
+          Table logging events on the website
+        columns:
+          - name: event_id
+            tests:
+              - not_null
+
+      - name: order_items
+        description: >
+          Table with itemized list of products purchased and quantity in each order
+
+      - name: orders
+        loaded_at_field: created_at
+        description: >
+          Table with order indormation
+        columns:
+          - name: order_id
+            tests:
+              - not_null
+
+      - name: products
+        description: >
+          Table with name, price, and inventory of each item
+
+      - name: promos
+        description: >
+          Table with all promotions and their associated discount
+        columns:
+          - name: promo_id
+            tests:
+              - not_null
+
+      - name: superheroes
+        loaded_at_field: created_at
+        description: >
+          Table with information of all superheroes
+
+      - name: users
+        loaded_at_field: created_at
+        description: >
+          Table with user information
+        columns:
+          - name: user_id
+            tests:
+              - not_null
+
+
+      
