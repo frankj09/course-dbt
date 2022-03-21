@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: A table of all products
+    columns:
+      - name: product_guid
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_users
+    description: A table of user and user address information
+    columns:
+      - name: user_guid
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_orders
+    description: A table of order and order item information
+    columns:
+      - name: order_guid
+        tests:
+          - not_null
+      - name: order_cost
+        tests:
+          - not_null

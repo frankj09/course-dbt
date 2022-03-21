@@ -7,7 +7,7 @@ renamed_casted as (
     select
         promo_id,
         discount,
-        status
+        status as promo_status
 
     from promos_source
 )

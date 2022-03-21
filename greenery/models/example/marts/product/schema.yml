@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: fact_page_views
+    description: All page view events from greenery’s events data
+    columns:
+      - name: event_guid
+        tests:
+          - unique
+          - not_null

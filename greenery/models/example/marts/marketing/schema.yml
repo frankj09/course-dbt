@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: user_order_facts
+    description: Order information at the user level
+    columns:
+      - name: order_guid
+        tests:
+          - unique
+          - not_null
+      - name: order_cost
+        tests:
+          - not_null
