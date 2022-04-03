@@ -24,6 +24,10 @@ models:
   - name: stg_promos
     description: >
       Table with all promotions and their associated discount
+    columns: 
+      - name: promo_status
+        test:
+          - dbt_utils.not_constant
 
   - name: stg_superheroes
     description: >

@@ -1,0 +1,20 @@
+version: 2
+
+macros:
+  - name: events_per_session
+    description: counts unique sessions per event
+    docs:
+      show: true
+    arguments:
+      - name: column_name
+        description: column to aggregate on
+      - name: event_type
+        description: event type to be aggregated
+
+  - name: grant_role
+    description: grant new role after dbt run
+    docs:
+      show: true
+    arguments:
+      - name: role
+        description: role to be granted

@@ -1,0 +1,14 @@
+version: 2
+
+exposures:
+  - name: Product Funnel
+    type: dashboard
+    maturity: low
+    description: How users are moving through the product funnel
+    depends_on: 
+      - ref('funnel_view_cart_checkout')
+      - ref('funnel_cart_checkout')
+      - ref('funnel_checkout')
+    owner:
+      name: Frank
+      email: frank@greenery.com
